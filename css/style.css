@@ -5,5 +5,261 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* ===================== VARIÁVEIS DE TEMA (RAIZ) ================ */
+/* Define as cores e fontes principais para fácil manutenção */
+:root {
+  --primaria: #f9003d;
+  --secundaria: #a259f7;
+  --destaque: #ffaf00;
+  --fundo-escuro: #080324;
+  --texto-claro: white;
+  --texto-cinza: #c7bab3;
+}
 
-/* Continuar digitação código CSS (deste ponto) */
+/* ==================== ESTILOS GERAIS ===================== */
+body {
+  background-color: var(--fundo-escuro);
+  color: var(--texto-claro);
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+/* Estilo para a tag <address> para remover o itálico padrão do navegador */
+address {
+  font-style: normal;
+}
+/* Container padrão para centralizar o conteúdo */
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+/* ======================== CABEÇALHO ======================== */
+.header {
+  background-color: var(--primaria);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 0.5em 0;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+/* Container flex do cabeçalho */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.logo {
+  height: 40px;
+}
+/* Menu de navegação */
+.menu {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+}
+.menu a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+.menu a:hover {
+  color: var(--destaque);
+}
+.botao {
+  background-color: var(--secundaria);
+  color: var(--texto-claro) !important;
+  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.2em;
+  transition: all 0.3s ease-in-out;
+}
+.botao:hover {
+  background: linear-gradient(135deg, var(--secundaria), var(--destaque));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px) scale(1.05);
+}
+/* ===================== BANNER PRINCIPAL ======================= */
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+              url(../assets/imagem-fundo-banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.conteudo-banner h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+.linha-destaque {
+  width: 200px;
+  height: 2px;
+  background-color: var(--destaque);
+  margin: 1rem auto;
+}
+.subtitulo {
+  font-size: 1.8rem;
+  color: var(--texto-cinza);
+  margin-bottom: 2rem;
+}
+.mouse {
+  width: 60px;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+/* ===================== SEÇÃO SOBRE ====================== */
+.sobre {
+  background-color: #181012;
+  padding: 4rem 0;
+}
+.titulo-secao {
+  color: var(--primaria);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+/* Container flex para organizar imagem e texto lado a lado */
+.conteudo-sobre {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.imagem-sobre {
+  width: 45%;
+  border-radius: 10px;
+  min-width: 300px;
+  flex: 1;
+}
+.texto-sobre {
+  width: 50%;
+  min-width: 300px;
+  flex: 1;
+}
+.destaque {
+  color: var(--destaque);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.texto-sobre h3 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+.texto-sobre p {
+  color: var(--texto-cinza);
+  font-size: 1.2rem;
+}
+/* ================= SEÇÃO DE INFORMAÇÕES ================= */
+.info {
+  padding: 4rem 0;
+  text-align: center;
+}
+/* Estilização de lista (UL) que contém os cards */
+.cards-info {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: #241a1c;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+}
+.card h3 {
+  color: var(--destaque);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.card p {
+  background-color: var(--fundo-escuro);
+  padding: 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+/* ================== SEÇÃO ENDEREÇO ================== */
+.endereco {
+padding: 4rem 0;
+}
+/* Container flex para organizar o texto do endereço e do mapa */
+.conteudo-endereco {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.texto-endereço {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  flex-grow: 1; /* Permite que o texto cresça se houver espaço  */
+}
+.mapa {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+/* ==================== RODAPÉ =================== */
+.footer {
+  background-color: var(--primaria);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+}
+/* ============= RESPONSIVIDADE (MEDIA QUERIES) ============== */
+@media (max-width: 768px) {
+  .nav-header {
+    justify-content: center; /* 'space-between' > 'center' */
+  }
+  .menu {
+    padding-top: 0;
+  }
+  /* Coloca os elementos das seções um abaixo do outro */
+  .conteudo-sobre,
+  .conteudo-endereco {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  /* Faz imagem e o texto ocuparem toda a largura */
+  .imagem-sobre,
+  .texto-sobre {
+    width: 100%;
+  }
+  /* Centraliza o endereço quando ele está em coluna */
+  .conteudo-endereco {
+    text-align: center;
+  }
+  /* Reduz o tamanho das fontes para melhor legibilidade */
+  .menu {font-size: 1rem;}
+  .conteudo-banner h1 {font-size: 3.5rem;}
+  .subtitulo {font-size: 1.5rem;}
+  .titulo-secao {font-size: 2.5rem;}
+  .texto-sobre h3 {font-size: 2rem;}
+  .texto-sobre p {font-size: 1.1rem;}
+  .card h3 {font-size: 1.5rem;}
+  .card p {font-size: 1.3rem;}
+  .texto-endereço {font-size: 1.1rem;}
+  /* Faz o mapa ocupar 100% da largura do container */
+  .mapa {
+    width: 100%;
+  }
+}
